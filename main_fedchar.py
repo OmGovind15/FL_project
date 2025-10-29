@@ -1,12 +1,36 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 import numpy as np
 import tensorflow as tf
 from sklearn.cluster import AgglomerativeClustering
 from scipy.spatial.distance import cosine
 import copy
-
+import sys
+import os
+from datetime import datetime
 from data_loader import load_wisdm_dataset, create_non_iid_data_split, create_tf_datasets
 from models import create_lstm_model
+class Logger:
+    """Redirects print statements to both terminal and a log file."""
+    def __init__(self, filepath):
+        self.terminal = sys.stdout
+        self.logfile = open(filepath, 'w', encoding='utf-8')
 
+    def write(self, message):
+        self.terminal.write(message)
+        self.logfile.write(message)
+        self.flush()
+
+    def flush(self):
+        self.terminal.flush()
+        self.logfile.flush()
+
+    def __del__(self):
+        # Restore stdout and close file when object is destroyed
+        sys.stdout = self.terminal
+        if self.logfile:
+            self.logfile.close()
+            
 class FedCHARServer:
     def __init__(self, num_clients, num_clusters=3):
         self.num_clients = num_clients
@@ -281,10 +305,43 @@ def run_fedchar(num_clients=30, num_rounds=100, initial_rounds=10,
 
 
 if __name__ == "__main__":
-    server, clients, results = run_fedchar(
-        num_clients=30,
-        num_rounds=50,
-        initial_rounds=10,
-        clients_per_round=10,
-        epochs_per_round=3
-    )
+    # --- Setup logging and paths ---
+    run_id = datetime.now().strftime('%Y%m%d_%H%M%S')
+    
+    os.makedirs('logs', exist_ok=True)
+    os.makedirs('saved_models', exist_ok=True)
+    
+    log_filepath = f'logs/run_log_fedchar_{run_id}.log'
+    model_save_path = f'saved_models/model_fedchar_{run_id}'
+    
+    original_stdout = sys.stdout
+    logger = Logger(log_filepath)
+    sys.stdout = logger
+
+    print(f"--- Starting FedCHAR Run: {run_id} ---")
+    print(f"Logs will be saved to: {log_filepath}")
+    print(f"Models will be saved to: {model_save_path}_*.h5")
+
+    try:
+        # --- Run the experiment ---
+        server, clients, results = run_fedchar(
+            num_clients=30,
+            num_rounds=50,
+            initial_rounds=10,
+            clients_per_round=10,
+            epochs_per_round=3
+        )
+        
+        # --- Save the models ---
+        print(f"\n--- Saving models for run {run_id} ---")
+        # FedCHAR saves the dense cluster models
+        for cluster_id, model in server.cluster_models.items():
+            save_path = f"{model_save_path}_cluster_{cluster_id}.h5"
+            model.save_weights(save_path)
+            print(f"Saved model for cluster {cluster_id} to {save_path}")
+
+    finally:
+        # --- Restore stdout and close log ---
+        sys.stdout = original_stdout
+        del logger
+        print(f"Run {run_id} complete. Logs saved to {log_filepath}")
