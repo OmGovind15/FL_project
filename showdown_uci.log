@@ -1,0 +1,1392 @@
+nohup: ignoring input
+2025-11-18 08:53:58.228968: I tensorflow/core/util/port.cc:110] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-11-18 08:53:58.289656: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+======================================================================
+STARTING UCI-HAR GENERALIZABILITY TEST (Seeds: [42, 123, 456])
+======================================================================
+
+
+========================================
+   STARTING SEED 42
+========================================
+
+--- Running caafp_uci (Seed 42) ---
+--- LOADING LATEST VERSION OF models.py ---
+============================================================
+CA-AFP: Progressive/Dynamic Hybrid Score Pruning
+============================================================
+
+Loading and preparing data...
+Loading UCI HAR Train data...
+Loading UCI HAR Test data...
+UCI HAR Loaded: (10299, 128, 9)
+
+Creating non-IID split for 30 clients...
+2025-11-18 08:54:04.628787: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 08:54:04.687698: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 08:54:04.688029: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 08:54:04.689109: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 08:54:04.689335: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 08:54:04.689490: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 08:54:04.809153: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 08:54:04.809504: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 08:54:04.809701: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 08:54:04.809821: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 16973 MB memory:  -> device: 0, name: GRID A100D-20C, pci bus id: 0000:06:00.0, compute capability: 8.0
+Initializing server and clients...
+
+============================================================
+PHASE 1: Initial Training (5 rounds)
+============================================================
+Round 1/5
+2025-11-18 08:54:28.688258: I tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:432] Loaded cuDNN version 8907
+2025-11-18 08:54:28.750013: I tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:606] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+2025-11-18 08:54:29.008474: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x236a78b0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-11-18 08:54:29.008543: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GRID A100D-20C, Compute Capability 8.0
+2025-11-18 08:54:29.016554: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:255] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-11-18 08:54:29.044125: W tensorflow/compiler/xla/service/gpu/llvm_gpu_backend/gpu_backend_lib.cc:543] Can't find libdevice directory ${CUDA_DIR}/nvvm/libdevice. This may result in compilation or runtime failures, if the program we try to run uses routines from libdevice.
+Searched for CUDA in the following directories:
+  ./cuda_sdk_lib
+  /usr/local/cuda-11.8
+  /usr/local/cuda
+  .
+You can choose the search directory by setting xla_gpu_cuda_data_dir in HloModule's DebugOptions.  For most apps, setting the environment variable XLA_FLAGS=--xla_gpu_cuda_data_dir=/path/to/cuda will work.
+2025-11-18 08:54:29.176923: I ./tensorflow/compiler/jit/device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+WARNING:tensorflow:5 out of the last 5 calls to <function _BaseOptimizer._update_step_xla at 0x7a4e5ca35f80> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:6 out of the last 6 calls to <function _BaseOptimizer._update_step_xla at 0x7a4e5ca35f80> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+Round 2/5
+Round 3/5
+Round 4/5
+Round 5/5
+
+============================================================
+PHASE 2: Client Clustering
+============================================================
+Clustering complete!
+
+--- PHASE 4: Calculating Adaptive Sparsity Targets ---
+  Cluster 0: Target Sparsity = 70.00%
+  Cluster 1: Target Sparsity = 70.00%
+  Cluster 2: Target Sparsity = 70.00%
+
+============================================================
+PHASE 3: Progressive Pruning & Cluster Training
+============================================================
+
+Round 6/40
+
+Round 7/40
+
+Round 8/40
+
+Round 9/40
+
+Round 10/40
+
+Round 11/40
+  Cluster 0: Collecting data for mask evolution...
+  Evolving Mask for Cluster 0 (Current: 0.00%, Target: 70.00%)
+  Cluster 1: Collecting data for mask evolution...
+  Evolving Mask for Cluster 1 (Current: 0.00%, Target: 70.00%)
+  Cluster 2: Collecting data for mask evolution...
+  Evolving Mask for Cluster 2 (Current: 0.00%, Target: 70.00%)
+
+Round 12/40
+
+Round 13/40
+
+Round 14/40
+
+Round 15/40
+
+Round 16/40
+  Cluster 0: Collecting data for mask evolution...
+  Evolving Mask for Cluster 0 (Current: 13.53%, Target: 70.00%)
+  Cluster 1: Collecting data for mask evolution...
+  Evolving Mask for Cluster 1 (Current: 13.53%, Target: 70.00%)
+  Cluster 2: Collecting data for mask evolution...
+  Evolving Mask for Cluster 2 (Current: 13.53%, Target: 70.00%)
+
+Round 17/40
+
+Round 18/40
+
+Round 19/40
+
+Round 20/40
+
+Round 21/40
+  Cluster 0: Collecting data for mask evolution...
+  Evolving Mask for Cluster 0 (Current: 24.78%, Target: 70.00%)
+  Cluster 1: Collecting data for mask evolution...
+  Evolving Mask for Cluster 1 (Current: 24.78%, Target: 70.00%)
+  Cluster 2: Collecting data for mask evolution...
+  Evolving Mask for Cluster 2 (Current: 24.78%, Target: 70.00%)
+
+Round 22/40
+
+Round 23/40
+
+Round 24/40
+
+Round 25/40
+
+Round 26/40
+  Cluster 0: Collecting data for mask evolution...
+  Evolving Mask for Cluster 0 (Current: 36.07%, Target: 70.00%)
+  Cluster 1: Collecting data for mask evolution...
+  Evolving Mask for Cluster 1 (Current: 36.07%, Target: 70.00%)
+  Cluster 2: Collecting data for mask evolution...
+  Evolving Mask for Cluster 2 (Current: 36.07%, Target: 70.00%)
+
+Round 27/40
+
+Round 28/40
+
+Round 29/40
+
+Round 30/40
+
+Round 31/40
+  Cluster 0: Collecting data for mask evolution...
+  Evolving Mask for Cluster 0 (Current: 47.37%, Target: 70.00%)
+  Cluster 1: Collecting data for mask evolution...
+  Evolving Mask for Cluster 1 (Current: 47.37%, Target: 70.00%)
+  Cluster 2: Collecting data for mask evolution...
+  Evolving Mask for Cluster 2 (Current: 47.37%, Target: 70.00%)
+
+Round 32/40
+
+Round 33/40
+
+Round 34/40
+
+Round 35/40
+
+Round 36/40
+  Cluster 0: Collecting data for mask evolution...
+  Evolving Mask for Cluster 0 (Current: 58.66%, Target: 70.00%)
+  Cluster 1: Collecting data for mask evolution...
+  Evolving Mask for Cluster 1 (Current: 58.66%, Target: 70.00%)
+  Cluster 2: Collecting data for mask evolution...
+  Evolving Mask for Cluster 2 (Current: 58.66%, Target: 70.00%)
+
+Round 37/40
+
+Round 38/40
+
+Round 39/40
+
+Round 40/40
+
+============================================================
+PHASE 5: Final Fine-Tuning & Evaluation
+============================================================
+  Fine-tuning clients in Cluster 0...
+  Fine-tuning clients in Cluster 1...
+  Fine-tuning clients in Cluster 2...
+
+Per-Client Results:
+  Client  0 (Cluster 2): Accuracy = 0.9722
+  Client  1 (Cluster 1): Accuracy = 0.8462
+  Client  2 (Cluster 1): Accuracy = 0.9000
+  Client  3 (Cluster 1): Accuracy = 0.9000
+WARNING:tensorflow:5 out of the last 9 calls to <function Model.make_test_function.<locals>.test_function at 0x7a4cc43dde40> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+  Client  4 (Cluster 1): Accuracy = 1.0000
+WARNING:tensorflow:6 out of the last 10 calls to <function Model.make_test_function.<locals>.test_function at 0x7a4cbe6b5080> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+  Client  5 (Cluster 2): Accuracy = 1.0000
+  Client  6 (Cluster 2): Accuracy = 0.9589
+  Client  7 (Cluster 1): Accuracy = 1.0000
+  Client  8 (Cluster 2): Accuracy = 0.9545
+  Client  9 (Cluster 1): Accuracy = 0.9189
+  Client 10 (Cluster 0): Accuracy = 0.9091
+  Client 11 (Cluster 0): Accuracy = 0.9091
+  Client 12 (Cluster 0): Accuracy = 1.0000
+  Client 13 (Cluster 0): Accuracy = 0.6923
+  Client 14 (Cluster 0): Accuracy = 0.7857
+  Client 15 (Cluster 0): Accuracy = 0.9048
+  Client 16 (Cluster 0): Accuracy = 1.0000
+  Client 17 (Cluster 0): Accuracy = 1.0000
+  Client 18 (Cluster 0): Accuracy = 0.8333
+  Client 19 (Cluster 0): Accuracy = 0.9333
+  Client 20 (Cluster 0): Accuracy = 0.9706
+  Client 21 (Cluster 0): Accuracy = 1.0000
+  Client 22 (Cluster 0): Accuracy = 1.0000
+  Client 23 (Cluster 0): Accuracy = 1.0000
+  Client 24 (Cluster 0): Accuracy = 1.0000
+  Client 25 (Cluster 0): Accuracy = 1.0000
+  Client 26 (Cluster 0): Accuracy = 1.0000
+  Client 27 (Cluster 0): Accuracy = 1.0000
+  Client 28 (Cluster 0): Accuracy = 1.0000
+  Client 29 (Cluster 0): Accuracy = 1.0000
+
+============================================================
+Overall Statistics:
+============================================================
+Average Accuracy: 0.9463
+Std Dev: 0.0747
+Min: 0.6923
+Max: 1.0000
+
+Per-Cluster Statistics:
+  Cluster 0:
+    Clients: 20
+    Avg Acc: 0.9469
+    Std Dev: 0.0845
+    Sparsity: 69.96%
+  Cluster 1:
+    Clients: 6
+    Avg Acc: 0.9275
+    Std Dev: 0.0559
+    Sparsity: 69.96%
+  Cluster 2:
+    Clients: 4
+    Avg Acc: 0.9714
+    Std Dev: 0.0177
+    Sparsity: 69.96%
+RESULT caafp_uci (Seed 42): 0.9463
+
+--- Running flcap_uci (Seed 42) ---
+============================================================
+FLCAP: ABLATION (Mask-Based Clustering)
+============================================================
+Random seed: 42
+
+Loading and preparing data...
+Loading UCI HAR Train data...
+Loading UCI HAR Test data...
+UCI HAR Loaded: (10299, 128, 9)
+
+Creating non-IID split for 30 clients...
+Initializing server and clients...
+
+============================================================
+PHASE 1: Initial Global Training
+============================================================
+Round 1/5
+Round 2/5
+Round 3/5
+Round 4/5
+Round 5/5
+
+============================================================
+PHASE 2: Client Clustering (Mask-Based)
+============================================================
+
+Performing client clustering (based on local masks)...
+Clustering complete!
+  Cluster 0: 25 clients
+  Cluster 1: 1 clients
+  Cluster 2: 4 clients
+
+============================================================
+PHASE 3: Training Dense Cluster Models
+============================================================
+
+Round 6/40
+
+Round 7/40
+
+Round 8/40
+
+Round 9/40
+
+Round 10/40
+
+Round 11/40
+
+Round 12/40
+
+Round 13/40
+
+Round 14/40
+
+Round 15/40
+
+Round 16/40
+
+Round 17/40
+
+Round 18/40
+
+Round 19/40
+
+Round 20/40
+
+Round 21/40
+
+Round 22/40
+
+Round 23/40
+
+Round 24/40
+
+Round 25/40
+
+Round 26/40
+
+Round 27/40
+
+Round 28/40
+
+Round 29/40
+
+Round 30/40
+
+Round 31/40
+
+Round 32/40
+
+Round 33/40
+
+Round 34/40
+
+Round 35/40
+
+Round 36/40
+
+Round 37/40
+
+Round 38/40
+
+Round 39/40
+
+Round 40/40
+
+============================================================
+PHASE 4: Adaptive Progressive Pruning
+============================================================
+
+--- FIXED 70% SPARSITY TEST ---
+  Cluster 0: sparsity=70.00%
+  Cluster 1: sparsity=70.00%
+  Cluster 2: sparsity=70.00%
+
+--- Applying Global Magnitude Pruning to Cluster 0 ---
+  Target sparsity: 70.00%
+  Progressive steps: 3
+  Step 1/3: pruned to 23.33%
+WARNING:tensorflow:5 out of the last 13 calls to <function Model.make_train_function.<locals>.train_function at 0x7a4c8b33f2e0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:5 out of the last 12 calls to <function Model.make_train_function.<locals>.train_function at 0x7a4c8a405d00> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+  Step 2/3: pruned to 46.67%
+  Step 3/3: pruned to 70.00%
+  Final sparsity: 70.04%
+  Final fine-tuning for cluster 0...
+
+--- Applying Global Magnitude Pruning to Cluster 1 ---
+  Target sparsity: 70.00%
+  Progressive steps: 3
+  Step 1/3: pruned to 23.33%
+  Step 2/3: pruned to 46.67%
+  Step 3/3: pruned to 70.00%
+  Final sparsity: 70.04%
+  Final fine-tuning for cluster 1...
+
+--- Applying Global Magnitude Pruning to Cluster 2 ---
+  Target sparsity: 70.00%
+  Progressive steps: 3
+  Step 1/3: pruned to 23.33%
+  Step 2/3: pruned to 46.67%
+  Step 3/3: pruned to 70.00%
+  Final sparsity: 70.04%
+  Final fine-tuning for cluster 2...
+
+============================================================
+PHASE 5: Final Evaluation
+============================================================
+
+Per-Client Results:
+  Client  0 (Cluster 0): Accuracy = 0.9444
+  Client  1 (Cluster 0): Accuracy = 0.7308
+  Client  2 (Cluster 2): Accuracy = 0.8000
+  Client  3 (Cluster 2): Accuracy = 0.6857
+  Client  4 (Cluster 2): Accuracy = 1.0000
+  Client  5 (Cluster 0): Accuracy = 1.0000
+  Client  6 (Cluster 1): Accuracy = 0.9589
+  Client  7 (Cluster 2): Accuracy = 1.0000
+  Client  8 (Cluster 0): Accuracy = 0.9545
+  Client  9 (Cluster 0): Accuracy = 0.5676
+  Client 10 (Cluster 0): Accuracy = 0.9091
+  Client 11 (Cluster 0): Accuracy = 0.9091
+  Client 12 (Cluster 0): Accuracy = 1.0000
+  Client 13 (Cluster 0): Accuracy = 0.6154
+  Client 14 (Cluster 0): Accuracy = 0.7857
+  Client 15 (Cluster 0): Accuracy = 0.9048
+  Client 16 (Cluster 0): Accuracy = 1.0000
+  Client 17 (Cluster 0): Accuracy = 1.0000
+  Client 18 (Cluster 0): Accuracy = 0.5556
+  Client 19 (Cluster 0): Accuracy = 1.0000
+  Client 20 (Cluster 0): Accuracy = 1.0000
+  Client 21 (Cluster 0): Accuracy = 1.0000
+  Client 22 (Cluster 0): Accuracy = 1.0000
+  Client 23 (Cluster 0): Accuracy = 1.0000
+  Client 24 (Cluster 0): Accuracy = 0.9048
+  Client 25 (Cluster 0): Accuracy = 1.0000
+  Client 26 (Cluster 0): Accuracy = 0.9412
+  Client 27 (Cluster 0): Accuracy = 1.0000
+  Client 28 (Cluster 0): Accuracy = 1.0000
+  Client 29 (Cluster 0): Accuracy = 1.0000
+
+============================================================
+Overall Statistics:
+============================================================
+Average Accuracy: 0.9056
+Std Dev: 0.1375
+Min: 0.5556
+Max: 1.0000
+
+Per-Cluster Statistics:
+  Cluster 0:
+    Clients: 25
+    Avg Acc: 0.9089
+    Std Dev: 0.1395
+    Actual Sparsity: 70.04%
+  Cluster 1:
+    Clients: 1
+    Avg Acc: 0.9589
+    Std Dev: 0.0000
+    Actual Sparsity: 70.04%
+  Cluster 2:
+    Clients: 4
+    Avg Acc: 0.8714
+    Std Dev: 0.1348
+    Actual Sparsity: 70.04%
+RESULT flcap_uci (Seed 42): 0.9056
+
+--- Running fedchar_uci (Seed 42) ---
+============================================================
+FedCHAR: Federated Learning with Clustered HAR
+============================================================
+
+Loading and preparing data...
+Loading UCI HAR Train data...
+Loading UCI HAR Test data...
+UCI HAR Loaded: (10299, 128, 9)
+
+Creating non-IID split for 30 clients...
+Initializing server and clients...
+
+Starting FedCHAR training for 50 rounds...
+
+============================================================
+PHASE 1: Initial Training (5 rounds)
+============================================================
+Round 1/5
+Round 2/5
+Round 3/5
+Round 4/5
+Round 5/5
+
+============================================================
+PHASE 2: Client Clustering
+============================================================
+Clustering complete!
+  Cluster 0: 20 clients
+  Cluster 1: 6 clients
+  Cluster 2: 4 clients
+
+============================================================
+PHASE 3: Personalized Training (45 rounds)
+============================================================
+
+Round 6/50
+
+Round 7/50
+
+Round 8/50
+
+Round 9/50
+
+Round 10/50
+
+Round 11/50
+
+Round 12/50
+
+Round 13/50
+
+Round 14/50
+
+Round 15/50
+
+Round 16/50
+
+Round 17/50
+
+Round 18/50
+
+Round 19/50
+
+Round 20/50
+
+Round 21/50
+
+Round 22/50
+
+Round 23/50
+
+Round 24/50
+
+Round 25/50
+
+Round 26/50
+
+Round 27/50
+
+Round 28/50
+
+Round 29/50
+
+Round 30/50
+
+Round 31/50
+
+Round 32/50
+
+Round 33/50
+
+Round 34/50
+
+Round 35/50
+
+Round 36/50
+
+Round 37/50
+
+Round 38/50
+
+Round 39/50
+
+Round 40/50
+
+Round 41/50
+
+Round 42/50
+
+Round 43/50
+
+Round 44/50
+
+Round 45/50
+
+Round 46/50
+
+Round 47/50
+
+Round 48/50
+
+Round 49/50
+
+Round 50/50
+
+============================================================
+PHASE 4: Final Evaluation
+============================================================
+  Client  0 (Cluster 2): Accuracy = 1.0000
+  Client  1 (Cluster 1): Accuracy = 0.7308
+  Client  2 (Cluster 1): Accuracy = 0.8000
+  Client  3 (Cluster 1): Accuracy = 0.9571
+  Client  4 (Cluster 1): Accuracy = 1.0000
+  Client  5 (Cluster 2): Accuracy = 1.0000
+  Client  6 (Cluster 2): Accuracy = 0.9863
+  Client  7 (Cluster 1): Accuracy = 1.0000
+  Client  8 (Cluster 2): Accuracy = 0.9545
+  Client  9 (Cluster 1): Accuracy = 0.9730
+  Client 10 (Cluster 0): Accuracy = 0.9091
+  Client 11 (Cluster 0): Accuracy = 0.9091
+  Client 12 (Cluster 0): Accuracy = 1.0000
+  Client 13 (Cluster 0): Accuracy = 0.7692
+  Client 14 (Cluster 0): Accuracy = 0.7857
+  Client 15 (Cluster 0): Accuracy = 0.9524
+  Client 16 (Cluster 0): Accuracy = 1.0000
+  Client 17 (Cluster 0): Accuracy = 1.0000
+  Client 18 (Cluster 0): Accuracy = 0.7222
+  Client 19 (Cluster 0): Accuracy = 0.9333
+  Client 20 (Cluster 0): Accuracy = 1.0000
+  Client 21 (Cluster 0): Accuracy = 0.9600
+  Client 22 (Cluster 0): Accuracy = 1.0000
+  Client 23 (Cluster 0): Accuracy = 1.0000
+  Client 24 (Cluster 0): Accuracy = 0.9048
+  Client 25 (Cluster 0): Accuracy = 1.0000
+  Client 26 (Cluster 0): Accuracy = 1.0000
+  Client 27 (Cluster 0): Accuracy = 1.0000
+  Client 28 (Cluster 0): Accuracy = 1.0000
+  Client 29 (Cluster 0): Accuracy = 1.0000
+
+============================================================
+Overall Statistics:
+============================================================
+Average Accuracy: 0.9416
+Std Dev: 0.0866
+Min: 0.7222
+Max: 1.0000
+
+Per-Cluster Statistics:
+  Cluster 0:
+    Clients: 20
+    Avg Acc: 0.9423
+    Std Dev: 0.0847
+  Cluster 1:
+    Clients: 6
+    Avg Acc: 0.9101
+    Std Dev: 0.1054
+  Cluster 2:
+    Clients: 4
+    Avg Acc: 0.9852
+    Std Dev: 0.0186
+RESULT fedchar_uci (Seed 42): 0.9416
+
+--- Running lazar_uci (Seed 42) ---
+============================================================
+ Baseline: Lazarevich et al. (2021) Post-Training Pruning
+============================================================
+
+Loading and preparing data...
+Loading UCI HAR Train data...
+Loading UCI HAR Test data...
+UCI HAR Loaded: (10299, 128, 9)
+
+Creating non-IID split for 30 clients...
+Initializing server and clients...
+
+============================================================
+PHASE 1: Training Dense Model (40 rounds)
+============================================================
+Round 1/40
+Round 2/40
+Round 3/40
+Round 4/40
+Round 5/40
+Round 6/40
+Round 7/40
+Round 8/40
+Round 9/40
+Round 10/40
+Round 11/40
+Round 12/40
+Round 13/40
+Round 14/40
+Round 15/40
+Round 16/40
+Round 17/40
+Round 18/40
+Round 19/40
+Round 20/40
+Round 21/40
+Round 22/40
+Round 23/40
+Round 24/40
+Round 25/40
+Round 26/40
+Round 27/40
+Round 28/40
+Round 29/40
+Round 30/40
+Round 31/40
+Round 32/40
+Round 33/40
+Round 34/40
+Round 35/40
+Round 36/40
+Round 37/40
+Round 38/40
+Round 39/40
+Round 40/40
+
+============================================================
+PHASE 2: Post-Training Pruning & Calibration
+============================================================
+Created 'Data-Free' (White Noise) calibration dataset with 192 samples.
+
+Pruning Step 1/10, Target Sparsity: 18.97%
+    Applying L2-normalized magnitude pruning...
+    Global threshold: 0.007505
+    Actual sparsity achieved: 0.19%
+    Applying bias & variance correction...
+FAILED lazar_uci: Input 0 of layer "model" is incompatible with the layer: expected shape=(None, 128, 9), found shape=(32, 200, 3)
+Traceback (most recent call last):
+  File "/root/fl_project/run_showdown_uci.py", line 97, in <module>
+    _, results_ft, _ = run_lazarevich_baseline(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fl_project/main_lazar_uci.py", line 478, in run_lazarevich_baseline
+    pruned_model = apply_bias_variance_correction(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fl_project/main_lazar_uci.py", line 209, in apply_bias_variance_correction
+    dense_outputs = intermediate_model(x_batch, training=False)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/keras/src/engine/input_spec.py", line 298, in assert_input_compatibility
+    raise ValueError(
+ValueError: Input 0 of layer "model" is incompatible with the layer: expected shape=(None, 128, 9), found shape=(32, 200, 3)
+
+--- Running fedmef_uci (Seed 42) ---
+Loading and preparing data...
+Loading UCI HAR Train data...
+Loading UCI HAR Test data...
+UCI HAR Loaded: (10299, 128, 9)
+
+Creating non-IID split for 30 clients...
+Initializing server and clients...
+
+Starting FedMef training for 50 rounds...
+Initial sparsity: 69.96%
+
+Round 1/50 
+  Current sparsity: 69.96%
+
+Round 2/50 
+
+Round 3/50 
+
+Round 4/50 
+
+Round 5/50 
+
+Round 6/50 
+
+Round 7/50 
+
+Round 8/50 
+
+Round 9/50 
+
+Round 10/50 
+
+Round 11/50 (Adjustment Round)
+  Adjusting masks (pruning and growing)...
+  Current sparsity: 75.36%
+
+Round 12/50 
+
+Round 13/50 
+
+Round 14/50 
+
+Round 15/50 
+
+Round 16/50 
+
+Round 17/50 
+
+Round 18/50 
+
+Round 19/50 
+
+Round 20/50 
+
+Round 21/50 (Adjustment Round)
+  Adjusting masks (pruning and growing)...
+  Current sparsity: 74.29%
+
+Round 22/50 
+
+Round 23/50 
+
+Round 24/50 
+
+Round 25/50 
+
+Round 26/50 
+
+Round 27/50 
+
+Round 28/50 
+
+Round 29/50 
+
+Round 30/50 
+
+Round 31/50 (Adjustment Round)
+  Adjusting masks (pruning and growing)...
+  Current sparsity: 74.87%
+
+Round 32/50 
+
+Round 33/50 
+
+Round 34/50 
+
+Round 35/50 
+
+Round 36/50 
+
+Round 37/50 
+
+Round 38/50 
+
+Round 39/50 
+
+Round 40/50 
+
+Round 41/50 
+  Current sparsity: 69.96%
+
+Round 42/50 
+
+Round 43/50 
+
+Round 44/50 
+
+Round 45/50 
+
+Round 46/50 
+
+Round 47/50 
+
+Round 48/50 
+
+Round 49/50 
+
+Round 50/50 
+
+--- Final Evaluation ---
+Client 0: Accuracy = 0.1111
+Client 1: Accuracy = 0.7308
+Client 2: Accuracy = 0.8000
+Client 3: Accuracy = 0.6571
+Client 4: Accuracy = 0.9583
+Client 5: Accuracy = 0.0000
+Client 6: Accuracy = 0.1644
+Client 7: Accuracy = 1.0000
+Client 8: Accuracy = 0.0455
+Client 9: Accuracy = 0.5405
+Client 10: Accuracy = 0.0000
+Client 11: Accuracy = 0.0000
+Client 12: Accuracy = 0.0000
+Client 13: Accuracy = 0.0000
+Client 14: Accuracy = 0.0000
+Client 15: Accuracy = 0.0000
+Client 16: Accuracy = 0.0000
+Client 17: Accuracy = 0.0000
+Client 18: Accuracy = 0.0000
+Client 19: Accuracy = 0.0000
+Client 20: Accuracy = 0.6324
+Client 21: Accuracy = 0.3200
+Client 22: Accuracy = 0.4483
+Client 23: Accuracy = 0.2667
+Client 24: Accuracy = 0.3333
+Client 25: Accuracy = 0.4828
+Client 26: Accuracy = 0.9412
+Client 27: Accuracy = 0.3235
+Client 28: Accuracy = 0.6667
+Client 29: Accuracy = 1.0000
+
+Final Sparsity: 69.96%
+Average Accuracy: 0.3474
+Std Dev: 0.3555
+Min: 0.0000, Max: 1.0000
+RESULT fedmef_uci (Seed 42): 0.3474
+
+
+========================================
+   STARTING SEED 123
+========================================
+
+--- Running caafp_uci (Seed 123) ---
+============================================================
+CA-AFP: Progressive/Dynamic Hybrid Score Pruning
+============================================================
+
+Loading and preparing data...
+Loading UCI HAR Train data...
+Loading UCI HAR Test data...
+UCI HAR Loaded: (10299, 128, 9)
+
+Creating non-IID split for 30 clients...
+Initializing server and clients...
+
+============================================================
+PHASE 1: Initial Training (5 rounds)
+============================================================
+Round 1/5
+Round 2/5
+Round 3/5
+2025-11-18 13:13:00.401229: I tensorflow/core/util/port.cc:110] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-11-18 13:13:00.467106: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+======================================================================
+STARTING UCI-HAR GENERALIZABILITY TEST (Seeds: [42])
+======================================================================
+
+
+========================================
+   STARTING SEED 42
+========================================
+
+--- Running lazar_uci (Seed 42) ---
+--- LOADING LATEST VERSION OF models.py ---
+============================================================
+ Baseline: Lazarevich et al. (2021) Post-Training Pruning
+============================================================
+
+Loading and preparing data...
+Loading UCI HAR Train data...
+Loading UCI HAR Test data...
+UCI HAR Loaded: (10299, 128, 9)
+
+Creating non-IID split for 30 clients...
+2025-11-18 13:13:07.200503: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:13:07.270842: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:13:07.271206: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:13:07.272408: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:13:07.272631: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:13:07.272804: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:13:07.403733: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:13:07.404156: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:13:07.404335: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:13:07.404479: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 16973 MB memory:  -> device: 0, name: GRID A100D-20C, pci bus id: 0000:06:00.0, compute capability: 8.0
+Initializing server and clients...
+
+============================================================
+PHASE 1: Training Dense Model (40 rounds)
+============================================================
+Round 1/40
+2025-11-18 13:13:22.841782: I tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:432] Loaded cuDNN version 8907
+2025-11-18 13:13:22.915606: I tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:606] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+2025-11-18 13:13:22.984762: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7450f4085830 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-11-18 13:13:22.984827: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GRID A100D-20C, Compute Capability 8.0
+2025-11-18 13:13:22.991367: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:255] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-11-18 13:13:23.016520: W tensorflow/compiler/xla/service/gpu/llvm_gpu_backend/gpu_backend_lib.cc:543] Can't find libdevice directory ${CUDA_DIR}/nvvm/libdevice. This may result in compilation or runtime failures, if the program we try to run uses routines from libdevice.
+Searched for CUDA in the following directories:
+  ./cuda_sdk_lib
+  /usr/local/cuda-11.8
+  /usr/local/cuda
+  .
+You can choose the search directory by setting xla_gpu_cuda_data_dir in HloModule's DebugOptions.  For most apps, setting the environment variable XLA_FLAGS=--xla_gpu_cuda_data_dir=/path/to/cuda will work.
+2025-11-18 13:13:23.141726: I ./tensorflow/compiler/jit/device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Round 2/40
+Traceback (most recent call last):
+  File "/root/fl_project/run_showdown_uci.py", line 94, in <module>
+    _, results_ft, _ = run_lazarevich_baseline(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fl_project/main_lazar_uci.py", line 420, in run_lazarevich_baseline
+    weights = clients[client_id].train(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/fl_project/main_lazar_uci.py", line 100, in train
+    self.model.fit(self.train_dataset, epochs=epochs, verbose=0)
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 65, in error_handler
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/keras/src/engine/training.py", line 1742, in fit
+    tmp_logs = self.train_function(iterator)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/util/traceback_utils.py", line 150, in error_handler
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 825, in __call__
+    result = self._call(*args, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 873, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 694, in _initialize
+    self._variable_creation_fn    # pylint: disable=protected-access
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/eager/polymorphic_function/tracing_compiler.py", line 176, in _get_concrete_function_internal_garbage_collected
+    concrete_function, _ = self._maybe_define_concrete_function(args, kwargs)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/eager/polymorphic_function/tracing_compiler.py", line 171, in _maybe_define_concrete_function
+    return self._maybe_define_function(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/eager/polymorphic_function/tracing_compiler.py", line 398, in _maybe_define_function
+    concrete_function = self._create_concrete_function(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/eager/polymorphic_function/tracing_compiler.py", line 305, in _create_concrete_function
+    func_graph_module.func_graph_from_py_func(
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/framework/func_graph.py", line 1055, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 597, in wrapped_fn
+    out = weak_wrapped_fn().__wrapped__(*args, **kwds)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/eager/polymorphic_function/autograph_util.py", line 41, in autograph_handler
+    return api.converted_call(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/autograph/impl/api.py", line 439, in converted_call
+    result = converted_f(*effective_args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/__autograph_generated_file11fo6qh8.py", line 15, in tf__train_function
+    retval_ = ag__.converted_call(ag__.ld(step_function), (ag__.ld(self), ag__.ld(iterator)), None, fscope)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/autograph/impl/api.py", line 377, in converted_call
+    return _call_unconverted(f, args, kwargs, options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/autograph/impl/api.py", line 460, in _call_unconverted
+    return f(*args)
+           ^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/keras/src/engine/training.py", line 1322, in step_function
+    outputs = model.distribute_strategy.run(run_step, args=(data,))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/distribute/distribute_lib.py", line 1673, in run
+    return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/distribute/distribute_lib.py", line 3250, in call_for_each_replica
+    return self._call_for_each_replica(fn, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/distribute/distribute_lib.py", line 4048, in _call_for_each_replica
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/autograph/impl/api.py", line 690, in wrapper
+    return converted_call(f, args, kwargs, options=options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/autograph/impl/api.py", line 377, in converted_call
+    return _call_unconverted(f, args, kwargs, options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/autograph/impl/api.py", line 459, in _call_unconverted
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/keras/src/engine/training.py", line 1303, in run_step
+    outputs = model.train_step(data)
+              ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/keras/src/engine/training.py", line 1084, in train_step
+    self.optimizer.minimize(loss, self.trainable_variables, tape=tape)
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/keras/src/optimizers/optimizer.py", line 543, in minimize
+    grads_and_vars = self.compute_gradients(loss, var_list, tape)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/keras/src/optimizers/optimizer.py", line 276, in compute_gradients
+    grads = tape.gradient(loss, var_list)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/eager/backprop.py", line 1063, in gradient
+    flat_grad = imperative_grad.imperative_grad(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/eager/imperative_grad.py", line 67, in imperative_grad
+    return pywrap_tfe.TFE_Py_TapeGradient(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/eager/polymorphic_function/monomorphic_function.py", line 336, in _backward_function
+    return self._rewrite_forward_and_call_backward(call_op, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/eager/polymorphic_function/monomorphic_function.py", line 239, in _rewrite_forward_and_call_backward
+    forward_function, backwards_function = self.forward_backward(len(doutputs))
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/eager/polymorphic_function/monomorphic_function.py", line 172, in forward_backward
+    forward, backward = self._construct_forward_backward(num_doutputs)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/eager/polymorphic_function/monomorphic_function.py", line 215, in _construct_forward_backward
+    func_graph_module.func_graph_from_py_func(
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/framework/func_graph.py", line 1055, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/eager/polymorphic_function/monomorphic_function.py", line 206, in _backprop_function
+    return gradients_util._GradientsHelper(  # pylint: disable=protected-access
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/ops/gradients_util.py", line 687, in _GradientsHelper
+    in_grads = _MaybeCompile(grad_scope, op, func_call,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/ops/gradients_util.py", line 327, in _MaybeCompile
+    return grad_fn()  # Exit early
+           ^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/ops/gradients_util.py", line 688, in <lambda>
+    lambda: grad_fn(op, *out_grads))
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/ops/while_v2.py", line 427, in _WhileGrad
+    outputs = _build_while_op(
+              ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/ops/while_v2.py", line 478, in _build_while_op
+    return util.run_as_function_for_tape_gradients(_make_op, loop_vars)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/ops/control_flow_util_v2.py", line 396, in run_as_function_for_tape_gradients
+    return make_op(inputs)
+           ^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/ops/while_v2.py", line 456, in _make_op
+    while_op, tensors = util.get_op_and_outputs(op_fn(
+                                                ^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/ops/gen_functional_ops.py", line 1007, in stateless_while
+    _, _, _op, _outputs = _op_def_library._apply_op_helper(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/framework/op_def_library.py", line 795, in _apply_op_helper
+    op = g._create_op_internal(op_type_name, inputs, dtypes=None,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/framework/func_graph.py", line 668, in _create_op_internal
+    inp = self.capture(inp)
+          ^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/framework/func_graph.py", line 675, in capture
+    return self._function_captures.capture_by_value(self, tensor, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/core/function/capture/capture_container.py", line 150, in capture_by_value
+    return graph._capture_helper(tensor, name)  # pylint: disable=protected-access
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/framework/func_graph.py", line 706, in _capture_helper
+    return self._function_captures._create_placeholder_helper(  # pylint: disable=protected-access
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/core/function/capture/capture_container.py", line 279, in _create_placeholder_helper
+    placeholder = spec.placeholder_value(placeholder_ctx)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/framework/tensor.py", line 269, in placeholder_value
+    placeholder = self._graph_placeholder(context_graph, name=name)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/framework/tensor.py", line 309, in _graph_placeholder
+    op = graph._create_op_internal(  # pylint: disable=protected-access
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/framework/func_graph.py", line 670, in _create_op_internal
+    return super()._create_op_internal(  # pylint: disable=protected-access
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/framework/ops.py", line 3381, in _create_op_internal
+    ret = Operation.from_node_def(
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/framework/ops.py", line 1889, in from_node_def
+    c_op = _create_c_op(g, node_def, inputs, control_input_ops, op_def=op_def)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/util/traceback_utils.py", line 150, in error_handler
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/framework/ops.py", line 1756, in _create_c_op
+    tf_stack.extract_stack_for_op(c_op, stacklevel=3)
+  File "/root/miniconda3/envs/fl_project/lib/python3.11/site-packages/tensorflow/python/util/tf_stack.py", line 180, in extract_stack_for_op
+    _tf_stack.extract_stack_for_op(
+KeyboardInterrupt
+2025-11-18 13:14:10.939366: I tensorflow/core/util/port.cc:110] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-11-18 13:14:10.996687: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+======================================================================
+STARTING UCI-HAR GENERALIZABILITY TEST (Seeds: [42])
+======================================================================
+
+
+========================================
+   STARTING SEED 42
+========================================
+
+--- Running lazar_uci (Seed 42) ---
+--- LOADING LATEST VERSION OF models.py ---
+============================================================
+ Baseline: Lazarevich et al. (2021) Post-Training Pruning
+============================================================
+
+Loading and preparing data...
+Loading UCI HAR Train data...
+Loading UCI HAR Test data...
+UCI HAR Loaded: (10299, 128, 9)
+
+Creating non-IID split for 30 clients...
+2025-11-18 13:14:17.445251: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:14:17.504204: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:14:17.504496: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:14:17.505305: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:14:17.505500: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:14:17.505632: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:14:17.618072: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:14:17.618380: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:14:17.618537: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-11-18 13:14:17.618654: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 16973 MB memory:  -> device: 0, name: GRID A100D-20C, pci bus id: 0000:06:00.0, compute capability: 8.0
+Initializing server and clients...
+
+============================================================
+PHASE 1: Training Dense Model (40 rounds)
+============================================================
+Round 1/40
+2025-11-18 13:14:32.778979: I tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:432] Loaded cuDNN version 8907
+2025-11-18 13:14:32.850513: I tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:606] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+2025-11-18 13:14:32.918169: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x74bd1814f2c0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-11-18 13:14:32.918234: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): GRID A100D-20C, Compute Capability 8.0
+2025-11-18 13:14:32.923949: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:255] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2025-11-18 13:14:32.946226: W tensorflow/compiler/xla/service/gpu/llvm_gpu_backend/gpu_backend_lib.cc:543] Can't find libdevice directory ${CUDA_DIR}/nvvm/libdevice. This may result in compilation or runtime failures, if the program we try to run uses routines from libdevice.
+Searched for CUDA in the following directories:
+  ./cuda_sdk_lib
+  /usr/local/cuda-11.8
+  /usr/local/cuda
+  .
+You can choose the search directory by setting xla_gpu_cuda_data_dir in HloModule's DebugOptions.  For most apps, setting the environment variable XLA_FLAGS=--xla_gpu_cuda_data_dir=/path/to/cuda will work.
+2025-11-18 13:14:33.066365: I ./tensorflow/compiler/jit/device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Round 2/40
+Round 3/40
+Round 4/40
+Round 5/40
+Round 6/40
+Round 7/40
+Round 8/40
+Round 9/40
+Round 10/40
+Round 11/40
+Round 12/40
+Round 13/40
+Round 14/40
+Round 15/40
+Round 16/40
+Round 17/40
+Round 18/40
+Round 19/40
+Round 20/40
+Round 21/40
+Round 22/40
+Round 23/40
+Round 24/40
+Round 25/40
+Round 26/40
+Round 27/40
+Round 28/40
+Round 29/40
+Round 30/40
+Round 31/40
+Round 32/40
+Round 33/40
+Round 34/40
+Round 35/40
+Round 36/40
+Round 37/40
+Round 38/40
+Round 39/40
+Round 40/40
+
+============================================================
+PHASE 2: Post-Training Pruning & Calibration
+============================================================
+Created 'Data-Free' (White Noise) calibration dataset with 192 samples.
+
+Pruning Step 1/10, Target Sparsity: 18.97%
+    Applying L2-normalized magnitude pruning...
+    Global threshold: 0.007505
+    Actual sparsity achieved: 0.19%
+    Applying bias & variance correction...
+    Bias & variance correction complete
+    Applying layer-wise fine-tuning (1 epochs)...
+      Fine-tuning layer: dense_1
+        Epoch 1/1, MSE Loss: 0.067680
+      Fine-tuning layer: output
+        Epoch 1/1, MSE Loss: 0.003540
+
+Pruning Step 2/10, Target Sparsity: 34.16%
+    Applying L2-normalized magnitude pruning...
+    Global threshold: 0.013684
+    Actual sparsity achieved: 0.34%
+    Applying bias & variance correction...
+    Bias & variance correction complete
+    Applying layer-wise fine-tuning (1 epochs)...
+      Fine-tuning layer: dense_1
+        Epoch 1/1, MSE Loss: 0.067869
+      Fine-tuning layer: output
+        Epoch 1/1, MSE Loss: 0.003161
+
+Pruning Step 3/10, Target Sparsity: 45.99%
+    Applying L2-normalized magnitude pruning...
+    Global threshold: 0.018689
+    Actual sparsity achieved: 0.46%
+    Applying bias & variance correction...
+    Bias & variance correction complete
+    Applying layer-wise fine-tuning (1 epochs)...
+      Fine-tuning layer: dense_1
+        Epoch 1/1, MSE Loss: 0.072194
+      Fine-tuning layer: output
+        Epoch 1/1, MSE Loss: 0.003619
+
+Pruning Step 4/10, Target Sparsity: 54.88%
+    Applying L2-normalized magnitude pruning...
+    Global threshold: 0.023118
+    Actual sparsity achieved: 0.55%
+    Applying bias & variance correction...
+    Bias & variance correction complete
+    Applying layer-wise fine-tuning (1 epochs)...
+      Fine-tuning layer: dense_1
+        Epoch 1/1, MSE Loss: 0.080138
+      Fine-tuning layer: output
+        Epoch 1/1, MSE Loss: 0.003827
+
+Pruning Step 5/10, Target Sparsity: 61.25%
+    Applying L2-normalized magnitude pruning...
+    Global threshold: 0.026877
+    Actual sparsity achieved: 0.61%
+    Applying bias & variance correction...
+    Bias & variance correction complete
+    Applying layer-wise fine-tuning (1 epochs)...
+      Fine-tuning layer: dense_1
+        Epoch 1/1, MSE Loss: 0.094497
+      Fine-tuning layer: output
+        Epoch 1/1, MSE Loss: 0.005348
+
+Pruning Step 6/10, Target Sparsity: 65.52%
+    Applying L2-normalized magnitude pruning...
+    Global threshold: 0.029815
+    Actual sparsity achieved: 0.65%
+    Applying bias & variance correction...
+    Bias & variance correction complete
+    Applying layer-wise fine-tuning (1 epochs)...
+      Fine-tuning layer: dense_1
+        Epoch 1/1, MSE Loss: 0.104769
+      Fine-tuning layer: output
+        Epoch 1/1, MSE Loss: 0.007193
+
+Pruning Step 7/10, Target Sparsity: 68.11%
+    Applying L2-normalized magnitude pruning...
+    Global threshold: 0.031999
+    Actual sparsity achieved: 0.68%
+    Applying bias & variance correction...
+    Bias & variance correction complete
+    Applying layer-wise fine-tuning (1 epochs)...
+      Fine-tuning layer: dense_1
+        Epoch 1/1, MSE Loss: 0.103041
+      Fine-tuning layer: output
+        Epoch 1/1, MSE Loss: 0.005636
+
+Pruning Step 8/10, Target Sparsity: 69.44%
+    Applying L2-normalized magnitude pruning...
+    Global threshold: 0.033466
+    Actual sparsity achieved: 0.69%
+    Applying bias & variance correction...
+    Bias & variance correction complete
+    Applying layer-wise fine-tuning (1 epochs)...
+      Fine-tuning layer: dense_1
+        Epoch 1/1, MSE Loss: 0.106828
+      Fine-tuning layer: output
+        Epoch 1/1, MSE Loss: 0.006218
+
+Pruning Step 9/10, Target Sparsity: 69.93%
+    Applying L2-normalized magnitude pruning...
+    Global threshold: 0.034072
+    Actual sparsity achieved: 0.70%
+    Applying bias & variance correction...
+    Bias & variance correction complete
+    Applying layer-wise fine-tuning (1 epochs)...
+      Fine-tuning layer: dense_1
+        Epoch 1/1, MSE Loss: 0.116655
+      Fine-tuning layer: output
+        Epoch 1/1, MSE Loss: 0.005026
+
+Pruning Step 10/10, Target Sparsity: 70.00%
+    Applying L2-normalized magnitude pruning...
+    Global threshold: 0.034063
+    Actual sparsity achieved: 0.70%
+    Applying bias & variance correction...
+    Bias & variance correction complete
+    Applying layer-wise fine-tuning (1 epochs)...
+      Fine-tuning layer: dense_1
+        Epoch 1/1, MSE Loss: 0.123511
+      Fine-tuning layer: output
+        Epoch 1/1, MSE Loss: 0.005199
+
+Progressive pruning and calibration complete.
+
+============================================================
+PHASE 3: Final Evaluation
+============================================================
+
+Evaluating (0-Shot)...
+WARNING:tensorflow:5 out of the last 9 calls to <function Model.make_test_function.<locals>.test_function at 0x74bd238e9c60> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+WARNING:tensorflow:6 out of the last 10 calls to <function Model.make_test_function.<locals>.test_function at 0x74bd238eafc0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+  Avg Accuracy (0-Shot): 0.3854
+
+Evaluating (3-Epoch Local FT)...
+
+============================================================
+Overall Statistics (Lazarevich et al. Baseline)
+============================================================
+Final Sparsity: 0.70%
+
+--- 0-Shot (No local fine-tuning) ---
+Average Accuracy: 0.3854
+Std Dev:          0.3224
+Min:              0.0000
+Max:              1.0000
+
+--- 3-Epoch Local Fine-Tuning ---
+Average Accuracy: 0.9064
+Std Dev:          0.1202
+Min:              0.5946
+Max:              1.0000
+RESULT lazar_uci (Seed 42): 0.9064
+
+
+======================================================================
+UCI-HAR 3-SEED SUMMARY
+======================================================================
+METHOD          | AVG ACCURACY    | STD DEV    | RAW SEEDS
+----------------------------------------------------------------------
+lazar_uci       | 0.9064          | 0.0000     | 0.9064
+======================================================================
