@@ -1,0 +1,7 @@
+                              Method  AvgAcc_Mean  AvgAcc_Std  StdDev_Mean  MinAcc_Mean  MaxAcc_Mean  Sparsity_Mean  Cluster0_Mean  Cluster1_Mean  Cluster2_Mean  NSeeds  AccScore  FairScore  Goodness
+                     caafp_hybrid_70       0.9151      0.0080       0.1217       0.5385       1.0000         0.6996         0.8698         0.9439         0.9560       5    1.0000     0.6775    0.8710
+                             fedchar       0.9082      0.0076       0.1374       0.4154       1.0000         0.0000         0.8615         0.9458         0.9393       5    0.9925     0.6360    0.8499
+                            lazar_70       0.9021      0.0107       0.1379       0.4538       1.0000         0.7000         0.0000         0.0000         0.0000       5    0.9858     0.6345    0.8453
+                  flcap_MASK_CLUSTER       0.8692      0.0192       0.1940       0.1538       1.0000         0.7004         0.8569         0.9966         0.9821       4    0.9499     0.4858    0.7643
+                           fedmef_70       0.3909      0.0202       0.3773       0.0000       0.9923         0.6996         0.0000         0.0000         0.0000       5    0.4272     0.0000    0.2563
+all_results_showdown_20251114_220910          NaN         NaN          NaN          NaN          NaN            NaN            NaN            NaN            NaN       1       NaN        NaN       NaN
